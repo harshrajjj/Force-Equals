@@ -1,0 +1,250 @@
+.account-list-container {
+  width: 100%;
+}
+
+/* Header and Stats */
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.account-header h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.account-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Card Layout */
+.account-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.account-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #e0e0e0;
+}
+
+.account-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Card status colors */
+.target-card {
+  border-top-color: #4caf50;
+}
+
+.prospect-card {
+  border-top-color: #2196f3;
+}
+
+.customer-card {
+  border-top-color: #9c27b0;
+}
+
+.archived-card {
+  border-top-color: #9e9e9e;
+}
+
+.card-header {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 1.2rem 1.5rem;
+  flex-grow: 1;
+}
+
+.card-footer {
+  padding: 1.2rem 1.5rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Match Score */
+.match-score {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.high-score {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+}
+
+.medium-score {
+  background-color: rgba(255, 152, 0, 0.15);
+  color: #ef6c00;
+}
+
+.low-score {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: #c62828;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.status-icon {
+  font-size: 1.2rem;
+}
+
+.card-id {
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.status-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.status-btn {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.status-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.status-btn.active {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading:before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.1);
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account-stats {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .account-cards {
+    grid-template-columns: 1fr;
+  }
+}
